@@ -88,7 +88,7 @@ const Page = () => {
           <Button btnName='Book Ticket' btnClass='!px-20 !py-3' />
         </div>
       </section>
-      <div className='bg-gray-g1 py-4'>
+      <div className='bg-gray-g1'>
         <div
           className='max-w-7xl m-auto min-h-480 flex items-center'
           style={{
@@ -97,7 +97,7 @@ const Page = () => {
             backgroundPosition: 'center',
           }}
         >
-          <div className='flex items-center gap-8'>
+          <div className='flex items-center gap-8 py-8'>
             <div>
               <img
                 src='https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/stree-2-et00364249-1721725490.jpg'
