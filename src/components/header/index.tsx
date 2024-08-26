@@ -9,7 +9,8 @@ import Link from 'next/link';
 const Header = () => {
   return (
     <>
-      <div className='max-w-7xl flex mx-auto my-0 h-16 justify-between bg-white text-sm'>
+      {/* web header start */}
+      <div className='hidden max-w-7xl md:flex mx-auto my-0 h-16 justify-between bg-white text-sm'>
         <div className='flex items-center gap-6 w-3/5 cursor-text'>
           <Link href={'/'}>
             <Image src={Logo} alt='logo' height={50} />
@@ -29,7 +30,21 @@ const Header = () => {
           <Button btnName='Sign In' className={`!m-auto`} />
         </div>
       </div>
-      <div className='bg-gray-800 text-white font-light text-sm'>
+      {/* web header end */}
+
+      {/* mobile header start  */}
+      <section className='flex md:hidden p-3 justify-between sticky top-0 bg-white z-50 shadow'>
+        <div className='flex flex-col gap-1 text-xs'>
+          <Link href={'/'}>
+            <Image src={Logo} alt='logo' height={28} />
+          </Link>
+          <span className='text-yellow-600'>Mumbai {`>`}</span>
+        </div>
+        <Image src={LensIcon} alt='lens' />
+      </section>
+      {/* mobile header end  */}
+
+      <div className='bg-gray-800 text-white font-light text-sm px-4'>
         <div className='max-w-7xl m-auto py-3 flex justify-between'>
           <div className='flex gap-4'>
             <Link href={'/movies'}>Movies</Link>

@@ -18,7 +18,7 @@ interface List {
 const MoviesList = ({ header, cta, ctaLabel, list, className }: List) => {
   const router= useRouter()
   return (
-    <div className={`max-w-7xl m-auto mb-8 ${className}`}>
+    <div className={`md:max-w-7xl px-4 md:px-0 m-auto mb-8 ${className}`}>
       <div className='flex justify-between mb-3'>
         <header className='text-2xl font-semibold text-gray-700'>
           {header}
@@ -27,7 +27,7 @@ const MoviesList = ({ header, cta, ctaLabel, list, className }: List) => {
           ctaLabel || 'See All'
         } >`}</header>
       </div>
-      <div className='grid grid-cols-5 gap-x-6'>
+      <div className='grid grid-cols-2 md:grid-cols-5 gap-6'>
         {list?.map((ele, ind):any => (
           <Card ele={ele} key={ind}  onClick={()=>router.push("/movies/1")}/>
         ))}

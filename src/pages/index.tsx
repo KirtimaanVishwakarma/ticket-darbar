@@ -27,6 +27,7 @@ const Page=()=> {
   ];
     return (
       <>
+      
         <Carousel />
 
         {/* recommendations section  */}
