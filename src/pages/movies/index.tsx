@@ -18,7 +18,7 @@ const Page = () => {
             <header className='text-xl font-semibold'>
               Movies in Gorakhpur
             </header>
-            <div className='flex sm:flex-wrap gap-x-4 gap-y-2 my-4 py-2 overflow-auto sticky sm:relative z-50  bg-white sm:top-0 sm:bg-gray-200 top-[3.9rem] px-4 sm:px-0'>
+            <div className='flex sm:flex-wrap gap-x-4 gap-y-2 my-4 py-2 overflow-auto sticky sm:relative z-50  bg-white sm:top-0 sm:bg-gray-200 top-16 px-4 sm:px-0'>
               {['Hindi', 'English', 'Gujarati', 'Marathi', 'Telugu','Tamil'].map(
                 (ele: string) => (
                   <div
