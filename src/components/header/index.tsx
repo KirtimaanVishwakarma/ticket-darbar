@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <>
       {/* web header start */}
-      <div className='hidden max-w-7xl md:flex mx-auto my-0 h-16 justify-between bg-white text-sm'>
+      <div className='hidden max-w-7xl sm:flex mx-auto my-0 h-16 justify-between bg-white text-sm'>
         <div className='flex items-center gap-6 w-3/5 cursor-text'>
           <Link href={'/'}>
             <Image src={Logo} alt='logo' height={50} />
@@ -33,7 +33,7 @@ const Header = () => {
       {/* web header end */}
 
       {/* mobile header start  */}
-      <section className='flex md:hidden p-3 justify-between sticky top-0 bg-white z-50 shadow'>
+      <section className='flex sm:hidden p-2 justify-between sticky top-0 bg-white z-10 shadow'>
         <div className='flex flex-col gap-1 text-xs'>
           <Link href={'/'}>
             <Image src={Logo} alt='logo' height={28} />

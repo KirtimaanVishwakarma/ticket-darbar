@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 
 function Carousel() {
   const settings = {
-    className: "center",
+    className: 'center',
     centerMode: true,
     infinite: true,
     slidesToShow: 1,
@@ -12,45 +12,53 @@ function Carousel() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    arrows:false,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 640,
+        settings: {
+          centerMode: false,
+        },
+      },
+    ],
   };
   return (
     <div className='slider-container my-2'>
       <Slider {...settings}>
-        <div className="px-2 min-h-24 object-cover h-28 md:h-fit">
+        <div className='px-0 sm:px-2 min-h-44 sm:min-h-fit object-cover h-28 sm:h-fit'>
           <img
             src={
               'https://assets-in.bmscdn.com/promotions/cms/creatives/1722350498229_copyofwebshowcase1240x300.jpg'
             }
             alt='slide1'
-            className='rounded-lg m-auto h-full w-full'
+            className='sm:rounded-lg m-auto h-full w-full'
           />
         </div>
-        <div className="px-2 min-h-24 object-cover h-28 md:h-fit">
+        <div className='sm:px-2 px-0 min-h-44 object-cover h-28 sm:h-fit'>
           <img
             src={
               'https://assets-in.bmscdn.com/promotions/cms/creatives/1722350498229_copyofwebshowcase1240x300.jpg'
             }
             alt='slide1'
-          className='rounded-lg m-auto w-full h-full'
+            className='sm:rounded-lg m-auto w-full h-full'
           />
         </div>
-        <div className="px-2 min-h-24 object-cover h-28 md:h-fit">
+        <div className='px-0 sm:px-2 min-h-44 object-cover h-28 sm:h-fit'>
           <img
             src={
               'https://assets-in.bmscdn.com/promotions/cms/creatives/1722350498229_copyofwebshowcase1240x300.jpg'
             }
             alt='slide1'
-          className='rounded-lg m-auto w-full h-full'
+            className='sm:rounded-lg m-auto w-full h-full'
           />
         </div>
-        <div className="px-2 min-h-24 object-cover h-28 md:h-fit">
+        <div className='px-0 sm:px-2 min-h-44 object-cover h-28 sm:h-fit'>
           <img
             src={
               'https://assets-in.bmscdn.com/promotions/cms/creatives/1722350498229_copyofwebshowcase1240x300.jpg'
             }
             alt='slide1'
-          className='rounded-lg m-auto w-full h-full'
+            className='sm:rounded-lg m-auto w-full h-full'
           />
         </div>
       </Slider>
