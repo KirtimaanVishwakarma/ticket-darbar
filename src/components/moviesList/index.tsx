@@ -3,6 +3,8 @@
 import React from 'react';
 import Card from "./card";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import ArrowRightIcon from "../../../public/assets/leftArrow.svg"
 
 interface List {
   header: string;
@@ -20,14 +22,14 @@ const MoviesList = ({ header, cta, ctaLabel, list, className }: List) => {
   return (
     <div className={`sm:max-w-7xl px-4 sm:px-0 m-auto mb-8 ${className}`}>
       <div className='flex justify-between mb-3'>
-        <header className='text-2xl font-semibold text-gray-700'>
+        <header className='text-base sm:text-2xl font-medium sm:font-semibold text-gray-700'>
           {header}
         </header>
-        <header className='text-sm font-light text-yellow-600 flex items-center cursor-pointer' onClick={()=>router.push("/movies")}>{`${
+        <div className='sm:text-sm text-xs font-light text-yellow-600 flex items-center cursor-pointer' onClick={()=>router.push("/movies")}>{`${
           ctaLabel || 'See All'
-        } >`}</header>
+        }`}<Image src={ArrowRightIcon} alt="arrow right" height={14} className="rotate-180"/></div>
       </div>
-      <div className='grid grid-cols-2 sm:grid-cols-5 gap-6'>
+      <div className='grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-6'>
         {list?.map((ele, ind):any => (
           <Card ele={ele} key={ind}  onClick={()=>router.push("/movies/1")}/>
         ))}

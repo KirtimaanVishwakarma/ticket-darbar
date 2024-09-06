@@ -1,7 +1,11 @@
 'use client';
 import Button from '@/components/form/button';
 import Layout from '@/components/layout';
+import MobileHeader from '@/components/mobile/header';
 import React, { useEffect, useState } from 'react';
+import ShareIcon from '../../../../public/assets/share.svg';
+import DetailsBanner from '@/components/mobile/detailsBanner';
+import CastScroll from "@/components/castScroll";
 
 const Page = () => {
   const castList = [
@@ -78,7 +82,7 @@ const Page = () => {
     <>
       <section
         className={`sticky top-0 bg-white shadow-xl ${
-          isVisible ? 'block' : 'hidden'
+          isVisible ? 'hidden sm:block' : 'hidden'
         }`}
       >
         <div className='flex justify-between items-center py-3 max-w-7xl m-auto'>
@@ -88,7 +92,13 @@ const Page = () => {
           <Button btnName='Book Ticket' btnClass='!px-20 !py-3' />
         </div>
       </section>
-      <div className='bg-gray-g1'>
+
+      {/* mobile details banner start  */}
+      <DetailsBanner />
+      {/* mobile details banner end  */}
+
+      {/* web details banner start  */}
+      <div className='bg-gray-g1 hidden sm:block'>
         <div
           className='max-w-7xl m-auto min-h-480 flex items-center'
           style={{
@@ -138,9 +148,10 @@ const Page = () => {
           </div>
         </div>
       </div>
+      {/* web details banner end  */}
       <section className='max-w-7xl m-auto'>
         <section className='max-w-4xl'>
-          <div className=' flex flex-col gap-4 py-6 border-b border-gray-300'>
+          <div className='  flex-col gap-4 py-6 border-b border-gray-300 hidden sm:flex'>
             <header className='text-black font-semibold text-2xl'>
               About the movie
             </header>
@@ -152,51 +163,9 @@ const Page = () => {
             </p>
           </div>
           {/* cast section  */}
-          <section id='target-div' className='py-6 border-b border-gray-300'>
-            <header className='text-black font-semibold text-2xl mb-6'>
-              Cast
-            </header>
-            <section className='flex overflow-auto gap-4'>
-              {castList?.map((cast, ind) => (
-                <div key={ind} className='text-center min-w-32'>
-                  <img
-                    src={cast?.image}
-                    alt='cast'
-                    className='aspect-square rounded-full h-32 w-32 object-cover m-auto'
-                  />
-                  <header className='text-black font-light text-base py-2'>
-                    {cast?.name}
-                  </header>
-                  <header className='text-gray-700 font-light text-sm'>
-                    {cast?.castAs}
-                  </header>
-                </div>
-              ))}
-            </section>
-          </section>
+          <CastScroll header="Cast" list={castList}/>
           {/* crew section  */}
-          <section className='py-6 mb-6 border-b border-gray-300'>
-            <header className='text-black font-semibold text-2xl mb-6'>
-              Crew
-            </header>
-            <section className='flex overflow-auto gap-4'>
-              {castList?.map((cast, ind) => (
-                <div key={ind} className='text-center min-w-32'>
-                  <img
-                    src={cast?.image}
-                    alt='cast'
-                    className='aspect-square rounded-full h-32 w-32 object-cover m-auto'
-                  />
-                  <header className='text-black font-light text-base py-2'>
-                    {cast?.name}
-                  </header>
-                  <header className='text-gray-700 font-light text-sm'>
-                    {cast?.castAs}
-                  </header>
-                </div>
-              ))}
-            </section>
-          </section>
+          <CastScroll header="Crew" list={castList}/>
         </section>
       </section>
     </>
@@ -204,7 +173,16 @@ const Page = () => {
 };
 
 Page.getLayout = function getLayout(page: any) {
-  return <Layout>{page}</Layout>;
+  return (
+    <Layout>
+      <MobileHeader href='/movies' Icon={ShareIcon}>
+        <header className='text-base font-semibold'>
+          Stree 2: Sarkate Ka Aatank
+        </header>
+      </MobileHeader>
+      {page}
+    </Layout>
+  );
 };
 
 export default Page;

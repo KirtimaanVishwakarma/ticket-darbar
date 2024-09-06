@@ -11,7 +11,7 @@ const Footer = () => {
     { image: Facebook },
   ];
   return (
-    <footer className='bg-black text-gray-600 py-6 px-4 pt-16'>
+    <footer className='hidden sm:block bg-black text-gray-600 py-6 px-4 pt-16'>
       <div className='relative '>
         <div className='relative flex justify-center px-8 w-fit m-auto bg-black z-10'>
           <Image src={Logo} alt='logo' height={60} />

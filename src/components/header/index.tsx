@@ -6,7 +6,7 @@ import ArrowDown from '../../../public/assets/arrow_drop_down.svg';
 import Button from '../form/button';
 import Link from 'next/link';
 
-const Header = () => {
+const Header = ({ showHeader }: Readonly<{ showHeader?: boolean }>) => {
   return (
     <>
       {/* web header start */}
@@ -33,7 +33,11 @@ const Header = () => {
       {/* web header end */}
 
       {/* mobile header start  */}
-      <section className='flex sm:hidden p-2 justify-between sticky top-0 bg-white z-10 shadow'>
+      <section
+        className={`flex sm:hidden p-2 px-4 justify-between sticky top-0 bg-white z-40 shadow ${
+          showHeader ? 'block' : 'hidden'
+        }`}
+      >
         <div className='flex flex-col gap-1 text-xs'>
           <Link href={'/'}>
             <Image src={Logo} alt='logo' height={28} />
@@ -44,7 +48,11 @@ const Header = () => {
       </section>
       {/* mobile header end  */}
 
-      <div className='bg-gray-800 text-white font-light text-sm px-4'>
+      <div
+        className={`bg-gray-800 text-white font-light text-sm px-4 ${
+          showHeader ? 'block' : 'hidden'
+        }`}
+      >
         <div className='max-w-7xl m-auto py-3 flex justify-between'>
           <div className='flex gap-4'>
             <Link href={'/movies'}>Movies</Link>

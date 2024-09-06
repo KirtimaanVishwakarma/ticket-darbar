@@ -43,7 +43,7 @@ const Page=()=> {
 }
 
 Page.getLayout = function getLayout(page:any) {
-  return <Layout>{page}</Layout>;
+  return <Layout showHeader={true}>{page}</Layout>;
 };
 
 export default Page;
