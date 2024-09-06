@@ -5,7 +5,8 @@ import MobileHeader from '@/components/mobile/header';
 import React, { useEffect, useState } from 'react';
 import ShareIcon from '../../../../public/assets/share.svg';
 import DetailsBanner from '@/components/mobile/detailsBanner';
-import CastScroll from "@/components/castScroll";
+import CastScroll from '@/components/castScroll';
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const castList = [
@@ -59,6 +60,7 @@ const Page = () => {
     },
   ];
 
+  const router=useRouter()
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -163,11 +165,17 @@ const Page = () => {
             </p>
           </div>
           {/* cast section  */}
-          <CastScroll header="Cast" list={castList}/>
+          <CastScroll header='Cast' list={castList} />
           {/* crew section  */}
-          <CastScroll header="Crew" list={castList}/>
+          <CastScroll header='Crew' list={castList} />
         </section>
       </section>
+      <Button
+        btnName='Book Tickets'
+        className='w-full sticky bottom-0 py-2 bg-white px-4 shadow-inner'
+        btnClass='!w-full !py-2'
+        onClick={()=>router.push('/buy-tickets')}
+      />
     </>
   );
 };

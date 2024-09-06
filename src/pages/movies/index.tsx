@@ -32,7 +32,7 @@ const Page = () => {
             )}
           </div>
 
-          <div className='grid sm:grid-cols-4 grid-cols-3 sm:gap-8 gap-3 px-4 sm:px-0'>
+          <div className='grid sm:grid-cols-4 grid-cols-3 sm:gap-8 gap-x-1 gap-y-3 px-4 sm:px-0'>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]?.map(
               (ele: any) => (
                 <div key={ele} onClick={() => router.push('/movies/1')}>
