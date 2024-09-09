@@ -435,3 +435,10 @@ export const shareLinks = [
         icon: WhatsAppIcon
     },
 ]
+
+export const videosLinks = [
+    { link: 'https://www.youtube.com/embed/f3xT1Nh5SNA?enablejsapi=1&modestbranding=1&origin=https%3A%2F%2Fin.bookmyshow.com&playsinline=1&mute=1&fs=1&rel=0&widgetid=3' },
+    { link: 'https://www.youtube.com/embed/f3xT1Nh5SNA?enablejsapi=1&modestbranding=1&origin=https%3A%2F%2Fin.bookmyshow.com&playsinline=1&mute=1&fs=1&rel=0&widgetid=3' },
+    { link: 'https://www.youtube.com/embed/f3xT1Nh5SNA?enablejsapi=1&modestbranding=1&origin=https%3A%2F%2Fin.bookmyshow.com&playsinline=1&mute=1&fs=1&rel=0&widgetid=3' },
+    { link: 'https://www.youtube.com/embed/f3xT1Nh5SNA?enablejsapi=1&modestbranding=1&origin=https%3A%2F%2Fin.bookmyshow.com&playsinline=1&mute=1&fs=1&rel=0&widgetid=3' }
+]

@@ -2,7 +2,7 @@
 import Button from '@/components/form/button';
 import Layout from '@/components/layout';
 import MobileHeader from '@/components/mobile/header';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import ShareIcon from '../../../../public/assets/share.svg';
 import DetailsBanner from '@/components/mobile/detailsBanner';
 import CastScroll from '@/components/castScroll';
@@ -38,6 +38,10 @@ const Page = ({
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useLayoutEffect(() => {
+    setShowBottomSheet(false);
   }, []);
 
   const linkHandler = (link: string) => {
@@ -83,11 +87,11 @@ const Page = ({
       {/* web details banner start  */}
       <WebDetailsBanner
         backgroundImageUrl='https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/stree-2-et00364249-1721725490.jpg'
-        imageUrl="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/stree-2-et00364249-1721725490.jpg"
+        imageUrl='https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/stree-2-et00364249-1721725490.jpg'
         numberOfTrailers={2}
-        ratingAndVotes="9/10 (204.7k Votes)"
-        genres="2h 29m • Comedy , Horror • UA • 15 Aug, 2024"
-        name="Stree 2: Sarkate Ka Aatank"
+        ratingAndVotes='9/10 (204.7k Votes)'
+        genres='2h 29m • Comedy , Horror • UA • 15 Aug, 2024'
+        name='Stree 2: Sarkate Ka Aatank'
         id={121232}
       />
 

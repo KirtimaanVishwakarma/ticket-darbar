@@ -3,6 +3,7 @@ import React from 'react';
 import PlayIcon from '../../../../public/assets/playIcon.svg';
 import StarIcon from '../../../../public/assets/strat-icon.svg';
 import Button from '@/components/form/button';
+import { useRouter } from "next/router";
 
 interface MovieDetails {
   imageUrl: string;
@@ -19,6 +20,8 @@ const DetailsBanner = ({
   description,
   genres,
 }: MovieDetails) => {
+  const router = useRouter();
+  
   return (
     <section className='sm:hidden p-4 overflow-hidden flex flex-col gap-2'>
       <div>
@@ -28,7 +31,7 @@ const DetailsBanner = ({
             src={imageUrl}
             alt='movie poster'
           />
-          <div className='absolute text-xs text-white w-full h-full flex justify-center items-center top-0'>
+          <div className='absolute text-xs text-white w-full h-full flex justify-center items-center top-0' onClick={()=>router.push(`/movies/${router?.query?.id}/multi-media`)}>
             <div className='bg-black bg-opacity-70 flex gap-2 py-1 px-4 rounded'>
               <Image src={PlayIcon} alt='play' height={14} />
               <header className='whitespace-nowrap'>
