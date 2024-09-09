@@ -94,14 +94,12 @@ BookSeats.getLayout = function getLayout(page: any) {
         </div>
       </MobileHeader>
       {page}
-      <div className='bg-white p-2 h-fit'>
+      <div className='bg-white p-4 border-t-2 border-gray-100 sticky bottom-0 h-fit'>
         <div className='flex w-fit gap-4  m-auto'>
           {seatDescription?.map((ele) => (
             <div key={ele?.heading} className='flex gap-2 items-center'>
               <div
-                className={`h-4 w-4 rounded ${ele?.className} ${
-                  ele?.heading === 'Available' ? '!border-green-400' : ''
-                }`}
+                className={`h-4 w-4 rounded ${ele?.className} `}
               />
               <header className='text-sm text-gray-500 font-light'>
                 {ele?.heading}

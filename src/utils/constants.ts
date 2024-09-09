@@ -224,11 +224,11 @@ export const seatDescription = [
     },
     {
         heading: 'Available',
-        className: '!bg-white !border !border-green-400',
+        className: 'bg-white !border border-green-600',
     },
     {
         heading: 'Selected',
-        className: '!bg-green-400',
+        className: 'bg-green-600',
     },
 ]
 
