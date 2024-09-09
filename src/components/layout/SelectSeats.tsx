@@ -17,11 +17,11 @@ const SelectSeats = ({
       <div className='bg-white p-3 h-fit'>
         <div className='flex gap-3'>
           <Image src={LeftArrow} alt='left-arrow' height={24} />
-          <div className='flex flex-col gap-1'>
-            <header className='font-light text-black text-sm'>
+          <div className='flex flex-col gap-1 text-sm'>
+            <header className='font-light text-black'>
               {movieName}
             </header>
-            <header className='font-normal text-gray-500 text-sm'>
+            <header className='font-normal text-gray-500'>
               {addressAndTime}
             </header>
           </div>
