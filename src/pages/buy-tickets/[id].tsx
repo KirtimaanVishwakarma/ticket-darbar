@@ -1,14 +1,15 @@
 import SelectSeats from '@/components/layout/SelectSeats';
-import { screenSeats } from '@/utils/constants';
+import { screenSeats, seatDescription } from '@/utils/constants';
 import React from 'react';
 import ScreenImage from '../../../public/assets/screen-transparent.png';
 import Image from 'next/image';
+import MobileHeader from '@/components/mobile/header';
 
 const BookSeats = () => {
   return (
     <section className='h-full bg-white w-full overflow-hidden'>
       <div className='mx-10 py-10 h-full overflow-auto'>
-        <div className="w-fit sm:m-auto">
+        <div className='w-fit sm:m-auto'>
           {screenSeats?.seatDetails?.map((details: any) => (
             <section key={details?.seatType} className='w-fit mx-auto'>
               <header className='font-light text-gray-400 text-xs border-b pb-3 border-gray-300 mb-2 mt-4'>{`Rs. ${details?.price} ${details?.seatType}`}</header>
@@ -83,12 +84,33 @@ const BookSeats = () => {
 BookSeats.getLayout = function getLayout(page: any) {
   return (
     <>
-      <SelectSeats
-        addressAndTime='Bharat Cineplex: Kurla (W) | Monday,Sep 9, 2024, 07:00 PM'
-        movieName='The Greatest of All Time (Telugu)'
-      >
-        {page}
-      </SelectSeats>
+      <MobileHeader href='/buy-tickets' hideForWeb={false}>
+        <div className='flex flex-col gap-1 text-sm'>
+          <header className='font-light text-black'>
+            The Greatest of All Time (Telugu)
+          </header>
+          <header className='font-normal text-gray-500'>
+            Bharat Cineplex: Kurla (W) | Monday,Sep 9, 2024, 07:00 PM
+          </header>
+        </div>
+      </MobileHeader>
+      {page}
+      <div className='bg-white p-2 h-fit'>
+        <div className='flex w-fit gap-4  m-auto'>
+          {seatDescription?.map((ele) => (
+            <div key={ele?.heading} className='flex gap-2 items-center'>
+              <div
+                className={`h-4 w-4 rounded ${ele?.className} ${
+                  ele?.heading === 'Available' ? '!border-green-400' : ''
+                }`}
+              />
+              <header className='text-sm text-gray-500 font-light'>
+                {ele?.heading}
+              </header>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

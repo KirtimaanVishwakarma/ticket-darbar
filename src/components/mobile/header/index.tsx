@@ -13,6 +13,7 @@ const MobileHeader = ({
   iconHeight,
   iconWidth,
   otherChildren: OtherChild,
+  hideForWeb=true
 }: Readonly<{
   children: React.ReactNode;
   className?: string;
@@ -22,9 +23,10 @@ const MobileHeader = ({
   iconHeight?: number;
   iconWidth?: number;
   otherChildren?: any;
+  hideForWeb?: boolean; 
 }>) => {
   return (
-    <section className={`sm:hidden sticky top-0 bg-white z-10 shadow `}>
+    <section className={`${hideForWeb?'sm:hidden':'block'} sticky top-0 bg-white z-10 shadow`}>
       <div className={`flex py-3 px-4 justify-between ${className}`}>
         <div className='flex gap-5 text-xs items-center '>
           <Link href={href}>
@@ -36,12 +38,14 @@ const MobileHeader = ({
           <header>Mumbai | 46 Movies</header> */}
           </div>
         </div>
-        <Image
-          src={Icon || LensIcon}
-          alt='lens'
-          className={iconFilter}
-          height={iconHeight}
-        />
+        <div className={Icon ? 'block' : 'hidden'}>
+          <Image
+            src={Icon || LensIcon}
+            alt='lens'
+            className={iconFilter}
+            height={iconHeight}
+          />
+        </div>
       </div>
       {OtherChild && <OtherChild />}
     </section>

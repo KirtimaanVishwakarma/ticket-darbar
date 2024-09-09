@@ -170,7 +170,7 @@ const Page = () => {
           <CastScroll header='Crew' list={castList} />
         </section>
       </section>
-      <div className="sm:hidden">
+      <div className="sticky bottom-0 sm:hidden">
       <Button
         btnName='Book Tickets'
         className='w-full sticky bottom-0 py-2 bg-white px-4 shadow-inner'
