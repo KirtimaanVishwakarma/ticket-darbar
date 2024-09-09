@@ -38,7 +38,7 @@ const Header = ({ showHeader }: Readonly<{ showHeader?: boolean }>) => {
           showHeader ? 'block' : 'hidden'
         }`}
       >
-        <div className='flex flex-col gap-1 text-xs'>
+        <div className='flex items-center gap-3 text-xs'>
           <Link href={'/'}>
             <Image src={Logo} alt='logo' height={28} />
           </Link>

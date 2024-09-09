@@ -145,7 +145,7 @@ const Page = () => {
               <header className='text-white text-sm'>
                 2h 29m • Comedy , Horror • UA • 15 Aug, 2024
               </header>
-              <Button btnName='Book Ticket' btnClass='!px-12 !py-3' />
+              <Button btnName='Book Ticket' btnClass='!px-12 !py-3' onClick={()=>router.push('/buy-tickets')}/>
             </div>
           </div>
         </div>
@@ -170,12 +170,14 @@ const Page = () => {
           <CastScroll header='Crew' list={castList} />
         </section>
       </section>
+      <div className="sm:hidden">
       <Button
         btnName='Book Tickets'
         className='w-full sticky bottom-0 py-2 bg-white px-4 shadow-inner'
         btnClass='!w-full !py-2'
         onClick={()=>router.push('/buy-tickets')}
       />
+      </div>
     </>
   );
 };
