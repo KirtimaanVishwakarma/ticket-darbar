@@ -215,6 +215,21 @@ export const cinemasList = [
             },
         ]
     },
+];
+
+export const seatDescription = [
+    {
+        heading: 'Sold',
+        className: 'bg-gray-300',
+    },
+    {
+        heading: 'Available',
+        className: '!bg-white !border !border-green-400',
+    },
+    {
+        heading: 'Selected',
+        className: '!bg-green-400',
+    },
 ]
 
 export const screenSeats = {
@@ -222,19 +237,21 @@ export const screenSeats = {
     seatDetails: [{
         seatType: 'RECLINER',
         price: 250,
-        BlockedSeats: {
+        rows: ['A', 'B'],
+        blockedSeats: {
             A: [1, 2, 3, 4, 5],
             B: [1, 2, 3, 4, 5, 11, 17, 18, 23],
         },
         bookedSeats: {
-            A:[23],
-            B:[12]
+            A: [23],
+            B: [12]
         },
     },
     {
         seatType: 'PRIME',
         price: 160,
-        BlockedSeats: {
+        rows: ['C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M'],
+        blockedSeats: {
             C: [8, 9, 10, 11, 12, 13, 16, 17],
             D: [8, 9, 10, 11, 12, 13, 16, 17],
             E: [8, 9, 10, 11, 12, 13, 16, 17],
@@ -245,12 +262,17 @@ export const screenSeats = {
             K: [8, 9, 16, 17],
             L: [8, 9, 16, 17],
             M: [8, 9, 16, 17],
-        }
+        },
+        bookedSeats: {
+            C: [1, 3, 6, , 20, 23],
+            G: [1, 3, 6, , 20, 23]
+        },
     },
     {
         seatType: 'CLASSIC',
         price: 150,
-        BlockedSeats: {
+        rows: ['N', 'O'],
+        blockedSeats: {
             N: [8, 9, 16, 17],
             O: [8, 9, 16, 17],
         }
