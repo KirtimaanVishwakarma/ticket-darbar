@@ -1,4 +1,3 @@
-import SelectSeats from '@/components/layout/SelectSeats';
 import { screenSeats, seatDescription } from '@/utils/constants';
 import React from 'react';
 import ScreenImage from '../../../public/assets/screen-transparent.png';
