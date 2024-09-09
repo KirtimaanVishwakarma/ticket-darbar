@@ -14,8 +14,8 @@ const BookSeats = () => {
               <header className='font-light text-gray-400 text-xs border-b pb-3 border-gray-300 mb-2 mt-4'>{`Rs. ${details?.price} ${details?.seatType}`}</header>
               <div className='flex flex-col gap-2'>
                 {details?.rows?.map((row: any) => (
-                  <div className='flex gap-4 items-center' key={row}>
-                    <header className='text-gray-400 text-sm font-normal'>
+                  <div className='flex gap-4 items-center relative' key={row}>
+                    <header className='text-gray-400 text-sm font-normal sticky left-0 bg-white p-1'>
                       {row}
                     </header>
                     <div
@@ -42,8 +42,8 @@ const BookSeats = () => {
                                   details?.bookedSeats[row]?.some(
                                     (seat: number) => seat === ele
                                   )
-                                ? 'bg-gray-200'
-                                : 'border border-green-600'
+                                ? 'bg-gray-200 cursor-not-allowed'
+                                : 'border border-green-600 cursor-pointer'
                             }`}
                             key={ele}
                           >
