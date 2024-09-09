@@ -1,4 +1,6 @@
 import moment from 'moment';
+import { toast } from "react-hot-toast";
+import { Zoom } from "react-toastify"
 
 // Function to get the next 7 days in the specified format
 export const getNext7Days = () => {
@@ -15,3 +17,16 @@ export const getNext7Days = () => {
 
   return daysList;
 };
+
+export const copyLinkHandler = (link: string) => {
+  navigator.clipboard.writeText(link)
+  toast('Link Copied!',
+  {
+    position:"bottom-center",
+    style: {
+      background: '#000',
+      color: '#fff',
+    },
+  }
+);
+}

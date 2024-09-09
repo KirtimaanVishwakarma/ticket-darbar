@@ -13,7 +13,8 @@ const MobileHeader = ({
   iconHeight,
   iconWidth,
   otherChildren: OtherChild,
-  hideForWeb=true
+  hideForWeb=true,
+  setIconState,
 }: Readonly<{
   children: React.ReactNode;
   className?: string;
@@ -24,6 +25,7 @@ const MobileHeader = ({
   iconWidth?: number;
   otherChildren?: any;
   hideForWeb?: boolean; 
+  setIconState?: React.Dispatch<React.SetStateAction<any>>;
 }>) => {
   return (
     <section className={`${hideForWeb?'sm:hidden':'block'} sticky top-0 bg-white z-10 shadow`}>
@@ -44,6 +46,7 @@ const MobileHeader = ({
             alt='lens'
             className={iconFilter}
             height={iconHeight}
+            onClick={setIconState}
           />
         </div>
       </div>

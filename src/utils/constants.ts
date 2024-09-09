@@ -1,3 +1,7 @@
+import LinkIcon from "../../public/assets/link-icon.svg";
+import WhatsAppIcon from "../../public/assets/whatsapp-icon.svg";
+import FacebookIcon from "../../public/assets/facebook-icon.svg";
+
 export const cinemasList = [
     {
         name: "Ajanta Cinema Cinex",
@@ -278,3 +282,72 @@ export const screenSeats = {
         }
     }],
 }
+
+export const castList = [
+    {
+      image:
+        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
+      name: 'Shraddha Kapoor',
+      castAs: 'Actor',
+    },
+    {
+      image:
+        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
+      name: 'Shraddha Kapoor',
+      castAs: 'Actor',
+    },
+    {
+      image:
+        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
+      name: 'Shraddha Kapoor',
+      castAs: 'Actor',
+    },
+    {
+      image:
+        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
+      name: 'Shraddha Kapoor',
+      castAs: 'Actor',
+    },
+    {
+      image:
+        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
+      name: 'Shraddha Kapoor',
+      castAs: 'Actor',
+    },
+    {
+      image:
+        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
+      name: 'Shraddha Kapoor',
+      castAs: 'Actor',
+    },
+    {
+      image:
+        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
+      name: 'Shraddha Kapoor',
+      castAs: 'Actor',
+    },
+    {
+      image:
+        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
+      name: 'Shraddha Kapoor',
+      castAs: 'Actor',
+    },
+  ];
+
+export const shareLinks = [
+    {
+        header: 'Copy Link',
+        url: 'copy',
+        icon: LinkIcon
+    },
+    {
+        header: 'Facebook',
+        url: 'https://www.facebook.com/share_channel/?link=https%3A%2F%2Fin.bookmyshow.com%2Fmumbai%2Fmovies%2Fthalapathy-is-the-goat%2FET00401441&app_id=966242223397117&source_surface=external_reshare&display&hashtag',
+        icon: FacebookIcon
+    },
+    {
+        header: 'WhatsApp',
+        url: 'https://x.com/intent/post?url=https%3A%2F%2Fin.bookmyshow.com%2Fmumbai%2Fmovies%2Fthalapathy-is-the-goat%2FET00401441&utm_source=twittershare&utm_medium=social&via=BookMyShow&text=&mx=2',
+        icon: WhatsAppIcon
+    },
+]

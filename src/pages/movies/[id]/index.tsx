@@ -6,61 +6,20 @@ import React, { useEffect, useState } from 'react';
 import ShareIcon from '../../../../public/assets/share.svg';
 import DetailsBanner from '@/components/mobile/detailsBanner';
 import CastScroll from '@/components/castScroll';
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
+import BottomSheet from '@/components/mobile/bottomSheet';
+import { castList, shareLinks } from '@/utils/constants';
+import Image from 'next/image';
+import { copyLinkHandler } from '@/utils/helpers';
 
-const Page = () => {
-  const castList = [
-    {
-      image:
-        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
-      name: 'Shraddha Kapoor',
-      castAs: 'Actor',
-    },
-    {
-      image:
-        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
-      name: 'Shraddha Kapoor',
-      castAs: 'Actor',
-    },
-    {
-      image:
-        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
-      name: 'Shraddha Kapoor',
-      castAs: 'Actor',
-    },
-    {
-      image:
-        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
-      name: 'Shraddha Kapoor',
-      castAs: 'Actor',
-    },
-    {
-      image:
-        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
-      name: 'Shraddha Kapoor',
-      castAs: 'Actor',
-    },
-    {
-      image:
-        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
-      name: 'Shraddha Kapoor',
-      castAs: 'Actor',
-    },
-    {
-      image:
-        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
-      name: 'Shraddha Kapoor',
-      castAs: 'Actor',
-    },
-    {
-      image:
-        'https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/shraddha-kapoor-23323-1676723901.jpg',
-      name: 'Shraddha Kapoor',
-      castAs: 'Actor',
-    },
-  ];
-
-  const router=useRouter()
+const Page = ({
+  showBottomSheet,
+  setShowBottomSheet,
+}: {
+  showBottomSheet: boolean;
+  setShowBottomSheet: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -79,6 +38,17 @@ const Page = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const linkHandler = (link: string) => {
+    switch (link) {
+      case 'copy':
+        copyLinkHandler(window?.location?.href);
+        break;
+      default:
+        window.open(link, '_blank');
+        break;
+    }
+  };
 
   return (
     <>
@@ -145,7 +115,11 @@ const Page = () => {
               <header className='text-white text-sm'>
                 2h 29m • Comedy , Horror • UA • 15 Aug, 2024
               </header>
-              <Button btnName='Book Ticket' btnClass='!px-12 !py-3' onClick={()=>router.push('/buy-tickets')}/>
+              <Button
+                btnName='Book Ticket'
+                btnClass='!px-12 !py-3'
+                onClick={() => router.push('/buy-tickets')}
+              />
             </div>
           </div>
         </div>
@@ -170,27 +144,50 @@ const Page = () => {
           <CastScroll header='Crew' list={castList} />
         </section>
       </section>
-      <div className="sticky bottom-0 sm:hidden">
-      <Button
-        btnName='Book Tickets'
-        className='w-full sticky bottom-0 py-2 bg-white px-4 shadow-inner'
-        btnClass='!w-full !py-2'
-        onClick={()=>router.push('/buy-tickets')}
-      />
+      <div className='sticky bottom-0 sm:hidden'>
+        <Button
+          btnName='Book Tickets'
+          className='w-full sticky bottom-0 py-2 bg-white px-4 shadow-inner'
+          btnClass='!w-full !py-2'
+          onClick={() => router.push('/buy-tickets')}
+        />
       </div>
+      <BottomSheet
+        showBottomSheet={showBottomSheet}
+        setShowBottomSheet={setShowBottomSheet}
+      >
+        {shareLinks?.map((link) => (
+          <div
+            key={link?.header}
+            className='flex p-4 justify-between items-center'
+            onClick={() => {
+              linkHandler(link?.url);
+            }}
+          >
+            <header className='text-gray-500 text-sm'>{link?.header}</header>
+            <Image src={link?.icon} alt={link?.header} height={22} />
+          </div>
+        ))}
+      </BottomSheet>
     </>
   );
 };
 
 Page.getLayout = function getLayout(page: any) {
+  const [showBottomSheet, setShowBottomSheet] = useState<boolean>(false);
   return (
     <Layout>
-      <MobileHeader href='/movies' Icon={ShareIcon}>
+      <MobileHeader
+        href='/movies'
+        Icon={ShareIcon}
+        setIconState={() => setShowBottomSheet(true)}
+      >
         <header className='text-base font-semibold'>
           Stree 2: Sarkate Ka Aatank
         </header>
       </MobileHeader>
-      {page}
+      {/* {page} */}
+      {React.cloneElement(page, { showBottomSheet, setShowBottomSheet })}
     </Layout>
   );
 };
