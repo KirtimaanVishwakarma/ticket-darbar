@@ -13,7 +13,7 @@ const SelectSeats = ({
   addressAndTime: string;
 }) => {
   return (
-    <section className='h-screen flex flex-col'>
+    <section className='h-screen flex flex-col w-fit'>
       <div className='bg-white p-3'>
         <div className='flex gap-3'>
           <Image src={LeftArrow} alt='left-arrow' height={24} />
