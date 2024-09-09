@@ -4,22 +4,36 @@ import PlayIcon from '../../../../public/assets/playIcon.svg';
 import StarIcon from '../../../../public/assets/strat-icon.svg';
 import Button from '@/components/form/button';
 
-const DetailsBanner = () => {
+interface MovieDetails {
+  imageUrl: string;
+  numberOfTrailers: number;
+  ratingAndVotes: string;
+  description: string;
+  genres: string;
+}
+
+const DetailsBanner = ({
+  imageUrl,
+  numberOfTrailers,
+  ratingAndVotes,
+  description,
+  genres,
+}: MovieDetails) => {
   return (
     <section className='sm:hidden p-4 overflow-hidden flex flex-col gap-2'>
       <div>
         <div className='relative w-full h-full'>
           <img
             className='w-full rounded-t-lg'
-            src={
-              'https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/stree-2-et00364249-1721725490.jpg'
-            }
+            src={imageUrl}
             alt='movie poster'
           />
           <div className='absolute text-xs text-white w-full h-full flex justify-center items-center top-0'>
             <div className='bg-black bg-opacity-70 flex gap-2 py-1 px-4 rounded'>
               <Image src={PlayIcon} alt='play' height={14} />
-              <header className='whitespace-nowrap'>Trailer 2</header>
+              <header className='whitespace-nowrap'>
+                Trailer {numberOfTrailers}
+              </header>
             </div>
           </div>
         </div>
@@ -32,7 +46,7 @@ const DetailsBanner = () => {
         <div className='flex items-center gap-2'>
           <Image src={StarIcon} alt='start' height={16} width={16} />
           <span className='font-semibold text-xs text-black'>
-            8.4/10 (7.8k Votes)
+            {ratingAndVotes}
           </span>
         </div>
         <Button
@@ -51,15 +65,8 @@ const DetailsBanner = () => {
           </header>
         ))}
       </section>
-      <header className='text-gray-700 text-xs'>
-        3h 3m • Action, Drama, Thriller • UA • 5 Sep, 2024
-      </header>
-      <header className='text-gray-700 text-sm'>
-        After the events of Stree, the town of Chanderi is being haunted again.
-        This time, women are mysteriously abducted by a terrifying headless
-        entity. Once again, it`s up to Bicky and his friends to save their town
-        and loved ones.
-      </header>
+      <header className='text-gray-700 text-xs'>{genres}</header>
+      <header className='text-gray-700 text-sm'>{description}</header>
     </section>
   );
 };

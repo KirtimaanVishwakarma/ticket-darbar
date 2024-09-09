@@ -11,6 +11,7 @@ import BottomSheet from '@/components/mobile/bottomSheet';
 import { castList, shareLinks } from '@/utils/constants';
 import Image from 'next/image';
 import { copyLinkHandler } from '@/utils/helpers';
+import WebDetailsBanner from '@/components/webDetailsBanner';
 
 const Page = ({
   showBottomSheet,
@@ -66,64 +67,30 @@ const Page = ({
       </section>
 
       {/* mobile details banner start  */}
-      <DetailsBanner />
+      <DetailsBanner
+        imageUrl={
+          'https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/stree-2-et00364249-1721725490.jpg'
+        }
+        description={
+          ' After the events of Stree, the town of Chanderi is being haunted again. This time, women are mysteriously abducted by a terrifying headless entity. Once again, it`s up to Bicky and his friends to save their town and loved ones.'
+        }
+        genres={'3h 3m • Action, Drama, Thriller • UA • 5 Sep, 2024'}
+        numberOfTrailers={2}
+        ratingAndVotes={'8.4/10 (7.8k Votes)'}
+      />
       {/* mobile details banner end  */}
 
       {/* web details banner start  */}
-      <div className='bg-gray-g1 hidden sm:block'>
-        <div
-          className='max-w-7xl m-auto min-h-480 flex items-center'
-          style={{
-            backgroundImage: `linear-gradient(90deg, #1A1A1A 24.97%, #1A1A1A 38.3%, rgba(26, 26, 26, 0.0409746) 97.47%, #1A1A1A 100%),url('https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/stree-2-et00364249-1721725490.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          <div className='flex items-center gap-8 py-8'>
-            <div>
-              <img
-                src='https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/stree-2-et00364249-1721725490.jpg'
-                alt=''
-                className='rounded-t-lg'
-              />
-              <header className='bg-black text-white text-xs py-2 text-center rounded-b-lg'>
-                In Cinema
-              </header>
-            </div>
-            <div className='flex flex-col gap-4'>
-              <div className='flex flex-col gap-4'>
-                <header className='text-white font-bold text-4xl'>
-                  Stree 2: Sarkate Ka Aatank
-                </header>
-                <div className='flex bg-gray-g2 text-white items-center px-8 py-4 rounded-lg gap-6'>
-                  <img
-                    src='https://i.pinimg.com/736x/99/cb/80/99cb803f7de902fbc34d7504ef593346.jpg'
-                    alt='star'
-                    className='h-8'
-                  />
-                  <header>9/10 (204.7k Votes)</header>
-                </div>
-              </div>
-              <div className='flex gap-4 text-sm'>
-                <header className='text-black bg-white px-3 py-1 font-light rounded'>
-                  2D
-                </header>
-                <header className='text-black bg-white px-3 py-1 font-light rounded'>
-                  Hindi
-                </header>
-              </div>
-              <header className='text-white text-sm'>
-                2h 29m • Comedy , Horror • UA • 15 Aug, 2024
-              </header>
-              <Button
-                btnName='Book Ticket'
-                btnClass='!px-12 !py-3'
-                onClick={() => router.push('/buy-tickets')}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <WebDetailsBanner
+        backgroundImageUrl='https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/stree-2-et00364249-1721725490.jpg'
+        imageUrl="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/stree-2-et00364249-1721725490.jpg"
+        numberOfTrailers={2}
+        ratingAndVotes="9/10 (204.7k Votes)"
+        genres="2h 29m • Comedy , Horror • UA • 15 Aug, 2024"
+        name="Stree 2: Sarkate Ka Aatank"
+        id={121232}
+      />
+
       {/* web details banner end  */}
       <section className='max-w-7xl m-auto'>
         <section className='max-w-4xl'>
@@ -138,9 +105,7 @@ const Page = ({
               save their town and loved ones.
             </p>
           </div>
-          {/* cast section  */}
           <CastScroll header='Cast' list={castList} />
-          {/* crew section  */}
           <CastScroll header='Crew' list={castList} />
         </section>
       </section>
