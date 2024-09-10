@@ -54,7 +54,7 @@ const DetailsBanner = ({
         </div>
         <Button
           btnName='Rate Now'
-          btnClass='text-xs py-2 !bg-white !border !border-yellow-600 !text-yellow-600'
+          btnClass='text-xs py-2 !bg-white !border !border-yellow-y1 !text-yellow-y1'
         />
       </section>
 

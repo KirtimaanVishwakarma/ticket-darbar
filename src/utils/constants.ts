@@ -1,6 +1,12 @@
 import LinkIcon from "../../public/assets/link-icon.svg";
 import WhatsAppIcon from "../../public/assets/whatsapp-icon.svg";
 import FacebookIcon from "../../public/assets/facebook-icon.svg";
+import HomeIcon from "../../public/assets/dual-color/home-fill.svg";
+import MovieIconFill from "../../public/assets/dual-color/movie-fill.svg";
+import MovieIcon from "../../public/assets/dual-color/movie.svg";
+import ProfileIcon from "../../public/assets/dual-color/profile.svg";
+import ProfileFillIcon from "../../public/assets/dual-color/profile-fill.svg";
+import HomeIconFill from  "../../public/assets/dual-color/home-fill-yellow.svg"
 
 export const cinemasList = [
     {
@@ -441,4 +447,10 @@ export const videosLinks = [
     { link: 'https://www.youtube.com/embed/f3xT1Nh5SNA?enablejsapi=1&modestbranding=1&origin=https%3A%2F%2Fin.bookmyshow.com&playsinline=1&mute=1&fs=1&rel=0&widgetid=3' },
     { link: 'https://www.youtube.com/embed/f3xT1Nh5SNA?enablejsapi=1&modestbranding=1&origin=https%3A%2F%2Fin.bookmyshow.com&playsinline=1&mute=1&fs=1&rel=0&widgetid=3' },
     { link: 'https://www.youtube.com/embed/f3xT1Nh5SNA?enablejsapi=1&modestbranding=1&origin=https%3A%2F%2Fin.bookmyshow.com&playsinline=1&mute=1&fs=1&rel=0&widgetid=3' }
+]
+
+export const footerLinks = [
+    { icon: HomeIcon,filledIcon:HomeIconFill, header: 'Home', path: '/' },
+    { icon: MovieIcon,filledIcon:MovieIconFill, header: 'Movies', path: '/movies' },
+    { icon: ProfileIcon,filledIcon:ProfileFillIcon, header: 'Profile', path: '/profile' },
 ]

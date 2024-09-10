@@ -155,7 +155,6 @@ Page.getLayout = function getLayout(page: any) {
           Stree 2: Sarkate Ka Aatank
         </header>
       </MobileHeader>
-      {/* {page} */}
       {React.cloneElement(page, { showBottomSheet, setShowBottomSheet })}
     </Layout>
   );

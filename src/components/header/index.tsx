@@ -15,7 +15,7 @@ const Header = ({ showHeader }: Readonly<{ showHeader?: boolean }>) => {
           <Link href={'/'}>
             <Image src={Logo} alt='logo' height={50} />
           </Link>
-          <div className='flex border w-full border-yellow-600 rounded py-2  text-gray-400 font-light'>
+          <div className='flex border w-full border-yellow-y1 rounded py-2  text-gray-400 font-light'>
             <Image src={LensIcon} alt='lens' height={12} className='mx-4' />
             <span className='whitespace-nowrap truncate'>
               Search for Movies, Events, Plays, Sports and Activities
@@ -42,7 +42,7 @@ const Header = ({ showHeader }: Readonly<{ showHeader?: boolean }>) => {
           <Link href={'/'}>
             <Image src={Logo} alt='logo' height={28} />
           </Link>
-          <span className='text-yellow-600'>Mumbai {`>`}</span>
+          <span className='text-yellow-y1'>Mumbai {`>`}</span>
         </div>
         <Image src={LensIcon} alt='lens' />
       </section>

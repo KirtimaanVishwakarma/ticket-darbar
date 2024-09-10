@@ -38,7 +38,7 @@ const MoviesList = ({ header, cta = '', ctaLabel, list, className }: List) => {
           {header}
         </header>
         <div
-          className={`sm:text-sm text-xs font-light text-yellow-600 flex items-center cursor-pointer ${
+          className={`sm:text-sm text-xs font-light text-yellow-y1 flex items-center cursor-pointer ${
             ctaLabel ? 'block' : 'hidden'
           }`}
           onClick={() => router.push(cta)}

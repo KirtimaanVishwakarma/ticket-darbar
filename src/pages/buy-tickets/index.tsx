@@ -18,7 +18,7 @@ const DatesRage = () => {
             key={dates?.date}
             className={`flex-1 py-2 text-center font-thin  text-xs ${
               moment().format('ddd').toUpperCase() === dates?.day
-                ? 'bg-yellow-600 text-white'
+                ? 'bg-yellow-y1 text-white'
                 : ''
             }`}
           >
@@ -33,7 +33,7 @@ const DatesRage = () => {
           HIND
           <span className='font-medium'> 2D</span>
         </header>
-        <span className='font-medium text-yellow-600'>Change {'>'}</span>
+        <span className='font-medium text-yellow-y1'>Change {'>'}</span>
       </div>
     </>
   );
