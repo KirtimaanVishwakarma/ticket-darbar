@@ -6,7 +6,7 @@ import MovieIconFill from "../../public/assets/dual-color/movie-fill.svg";
 import MovieIcon from "../../public/assets/dual-color/movie.svg";
 import ProfileIcon from "../../public/assets/dual-color/profile.svg";
 import ProfileFillIcon from "../../public/assets/dual-color/profile-fill.svg";
-import HomeIconFill from  "../../public/assets/dual-color/home-fill-yellow.svg"
+import HomeIconFill from "../../public/assets/dual-color/home-fill-yellow.svg"
 
 export const cinemasList = [
     {
@@ -416,13 +416,42 @@ export const moviesList = [
 ];
 
 export const languageList = [
-    'Hindi',
-    'English',
-    'Gujarati',
-    'Marathi',
-    'Telugu',
-    'Tamil',
+    { type: 'Hindi', isAdded: false },
+    { type: 'English', isAdded: false },
+    { type: 'Gujarati', isAdded: false },
+    { type: 'Marathi', isAdded: false },
+    { type: 'Telugu', isAdded: false },
+    { type: 'Tamil', isAdded: false },
 ]
+
+export const webFilters = [
+    {
+        header: 'Languages',
+        list: languageList,
+    },
+    {
+        header: 'Genres',
+        list: [
+            { type: 'Drama', isAdded: false },
+            { type: 'Comedy', isAdded: false },
+            { type: 'Action', isAdded: false },
+            { type: 'Romantic', isAdded: false },
+            { type: 'Horror', isAdded: false },
+            { type: 'Sci-Fi', isAdded: false },
+            { type: 'Fantasy', isAdded: false },
+            { type: 'Family', isAdded: false },
+        ],
+    },
+    {
+        header: 'Formate', list: [
+            { type: '2D', isAdded: false },
+            { type: '3D', isAdded: false },
+            { type: '4DX 3D', isAdded: false },
+            { type: 'IMAX 3D', isAdded: false },
+            { type: 'IMAX 2D', isAdded: false },
+        ]
+    }
+];
 
 export const shareLinks = [
     {
@@ -450,7 +479,7 @@ export const videosLinks = [
 ]
 
 export const footerLinks = [
-    { icon: HomeIcon,filledIcon:HomeIconFill, header: 'Home', path: '/' },
-    { icon: MovieIcon,filledIcon:MovieIconFill, header: 'Movies', path: '/movies' },
-    { icon: ProfileIcon,filledIcon:ProfileFillIcon, header: 'Profile', path: '/profile' },
+    { icon: HomeIcon, filledIcon: HomeIconFill, header: 'Home', path: '/' },
+    { icon: MovieIcon, filledIcon: MovieIconFill, header: 'Movies', path: '/movies' },
+    { icon: ProfileIcon, filledIcon: ProfileFillIcon, header: 'Profile', path: '/profile' },
 ]

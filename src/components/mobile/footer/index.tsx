@@ -6,7 +6,6 @@ import React from 'react';
 
 const Footer = () => {
   const { pathname, push } = useRouter();
-  console.log(pathname);
   return (
     <footer className='sticky bottom-0 bg-white shadow-thin py-2 px-6 flex justify-between rounded-t-2xl sm:hidden'>
       {footerLinks?.map((footerLink) => (

@@ -8,9 +8,10 @@ import Filter from '@/components/movieFilter';
 import MoviesList from '@/components/moviesList';
 import { languageList, moviesList } from '@/utils/constants';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 const Page = () => {
+  const [languages, setLanguages] = useState(languageList);
 
   return (
     <>
@@ -25,14 +26,39 @@ const Page = () => {
             <div
               className={`flex sm:flex-wrap gap-x-2 sm:gap-x-4 gap-y-2 sm:my-4 py-4 overflow-auto sticky sm:relative z-50 bg-white sm:top-0 sm:bg-gray-200 top-16 px-4 sm:px-0`}
             >
-              {languageList.map((ele: string) => (
-                <div
-                  key={ele}
-                  className={`border sm:min-w-20 flex-1 sm:flex-none border-gray-300 text-yellow-y1 px-3 py-1 rounded-l-full rounded-r-full text-xs sm:text-sm text-center bg-white`}
-                >
-                  {ele}
-                </div>
-              ))}
+              {languages
+                .sort((a, b) => {
+                  if (a.isAdded && !b.isAdded) return -1;
+                  if (!a.isAdded && b.isAdded) return 1;
+                  return a.type.localeCompare(b.type);
+                })
+                .map((ele: { type: string; isAdded: boolean }) => (
+                  <div
+                    key={ele?.type}
+                    onClick={() => {
+                      setLanguages(
+                        languages?.map(
+                          (item: { type: string; isAdded: boolean }) => {
+                            return {
+                              type: item?.type,
+                              isAdded:
+                                item?.type === ele?.type
+                                  ? !item?.isAdded
+                                  : item?.isAdded,
+                            };
+                          }
+                        )
+                      );
+                    }}
+                    className={`${
+                      ele?.isAdded
+                        ? 'text-white bg-yellow-y1'
+                        : 'shadow-thin text-yellow-y1 bg-white '
+                    }  sm:min-w-20 flex-1 sm:flex-none cursor-pointer  px-3 py-1 rounded-l-full rounded-r-full text-xs sm:text-sm justify-center flex items-center gap-2`}
+                  >
+                    <span>{ele?.type}</span>
+                  </div>
+                ))}
             </div>
             <MoviesList list={moviesList} />
           </div>
