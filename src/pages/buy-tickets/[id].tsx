@@ -3,19 +3,29 @@ import React from 'react';
 import ScreenImage from '../../../public/assets/screen-transparent.png';
 import Image from 'next/image';
 import MobileHeader from '@/components/mobile/header';
+import usePinchZoom from '@/hooks/usePinchZoom';
 
 const BookSeats = () => {
+  const scale = usePinchZoom('seat-arrangement');
   return (
-    <section className='h-full bg-white w-full overflow-hidden'>
-      <div className='mx-10 py-10 h-full overflow-auto'>
-        <div className='w-fit sm:m-auto'>
+    <section className='h-full bg-white w-full overflow-hidden px-4'>
+      <div className='sm:mx-10 py-10 h-full overflow-auto '>
+        <div
+          className={`w-fit sm:m-auto !touch-auto transform ease-in-out duration-700`}
+          style={{ transform: `scale(${scale})` }}
+          id='seat-arrangement'
+        >
           {screenSeats?.seatDetails?.map((details: any) => (
             <section key={details?.seatType} className='w-fit mx-auto'>
               <header className='font-light text-gray-400 text-xs border-b pb-3 border-gray-300 mb-2 mt-4'>{`Rs. ${details?.price} ${details?.seatType}`}</header>
               <div className='flex flex-col gap-2'>
                 {details?.rows?.map((row: any) => (
                   <div className='flex gap-4 items-center relative' key={row}>
-                    <header className='text-gray-400 text-sm font-normal sticky left-0 bg-white p-1'>
+                    <header
+                      className={`text-gray-400 text-sm font-normal ${
+                        scale === 1 ? 'sticky' : ''
+                      } left-0 bg-white p-1`}
+                    >
                       {row}
                     </header>
                     <div
@@ -98,9 +108,7 @@ BookSeats.getLayout = function getLayout(page: any) {
         <div className='flex w-fit gap-4  m-auto'>
           {seatDescription?.map((ele) => (
             <div key={ele?.heading} className='flex gap-2 items-center'>
-              <div
-                className={`h-4 w-4 rounded ${ele?.className} `}
-              />
+              <div className={`h-4 w-4 rounded ${ele?.className} `} />
               <header className='text-sm text-gray-500 font-light'>
                 {ele?.heading}
               </header>

@@ -19,7 +19,7 @@ type AppPropsWithLayout = AppProps & {
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
   return (
-    <>
+    <div className="touch-pan-y touch-pan-x">
       {getLayout(<Component {...pageProps} />)}
       <Toaster
         toastOptions={{
@@ -27,6 +27,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           duration: 1500,
         }}
       />
-    </>
+    </div>
   );
 }

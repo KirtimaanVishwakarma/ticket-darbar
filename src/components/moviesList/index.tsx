@@ -52,17 +52,10 @@ const MoviesList = ({ header, cta = '', ctaLabel, list, className }: List) => {
           />
         </div>
       </div>
-      <div className='grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-6'>
+      <div className='grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-6'>
         {list?.map((ele): any => (
           <div key={ele?.id} onClick={() => router.push('/movies/' + ele?.id)}>
             <Card ele={ele} />
-            <header className='mt-2 font-medium sm:font-semibold text-sm sm:text-lg'>
-              Stree 2: Sarkate Ka Atank
-            </header>
-            <header className='font-light text-xs sm:text-sm'>UA</header>
-            <header className='font-light text-xs sm:text-sm'>
-              Hindi, Tamil, Telugu
-            </header>
           </div>
         ))}
       </div>

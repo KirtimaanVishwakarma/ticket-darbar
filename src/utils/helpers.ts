@@ -19,7 +19,7 @@ export const getNext7Days = () => {
 };
 
 export const copyLinkHandler = (link: string) => {
-  navigator.clipboard.writeText(link)
+  navigator?.clipboard?.writeText(link)
   toast('Link Copied!',
   {
     position:"bottom-center",
