@@ -18,7 +18,7 @@ const BottomSheet = ({
   }, [showBottomSheet]);
   return (
     <div
-      className={`sm:hidden h-screen w-full fixed top-0 bg-black bg-opacity-60 z-50 ${
+      className={`sm:hidden h-full w-full fixed top-0 bg-black bg-opacity-60 z-50 ${
         showBottomSheet ? 'block' : 'translate-y-full'
       }`}
       onClick={() => setShowBottomSheet(false)}
