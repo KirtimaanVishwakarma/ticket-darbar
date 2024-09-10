@@ -2,14 +2,23 @@ import { useState, useEffect } from 'react';
 
 const usePinchZoom = (divId: string) => {
   const [scale, setScale] = useState<number>(1);
+  const [prevDistance, setPrevDistance] = useState<number | null>(null);
 
   useEffect(() => {
     const zoomElement = document.getElementById(divId);
     
     if (!zoomElement) return;
 
-    let initialDistance = 0;
-    let currentScale = 1;
+    const scales = [0.5, 0.75, 1];
+
+    const getNextScale = (currentScale: number, zoomIn: boolean) => {
+      const index = scales.indexOf(currentScale);
+      if (zoomIn) {
+        return index > 0 ? scales[index - 1] : currentScale;
+      } else {
+        return index < scales.length - 1 ? scales[index + 1] : currentScale;
+      }
+    };
 
     const handleTouchMove = (e: TouchEvent) => {
       if (e.touches.length === 2) {
@@ -21,21 +30,21 @@ const usePinchZoom = (divId: string) => {
           Math.pow(touch2.pageX - touch1.pageX, 2) + Math.pow(touch2.pageY - touch1.pageY, 2)
         );
 
-        // If initialDistance is 0, this is the first pinch event
-        if (initialDistance === 0) {
-          initialDistance = distance;
-        } else {
-          // Compare current distance to initial distance to determine zoom direction
-          const scaleChange = distance / initialDistance;
+        // Determine if zooming in or out
+        const zoomIn = prevDistance !== null && distance < prevDistance;
+        const zoomOut = prevDistance !== null && distance > prevDistance;
 
-          currentScale = Math.min(Math.max(currentScale * scaleChange, 0.5), 1.5); // Clamp scale between 0.5 and 1.5
-          setScale(currentScale);
+        if (zoomIn || zoomOut) {
+          const newScale = getNextScale(scale, zoomIn);
+          setScale(newScale);
         }
+
+        setPrevDistance(distance); // Update previous distance
       }
     };
 
     const handleTouchEnd = () => {
-      initialDistance = 0; // Reset the initial distance when touch ends
+      setPrevDistance(null); // Reset previous distance when touch ends
     };
 
     // Add event listeners
@@ -49,7 +58,7 @@ const usePinchZoom = (divId: string) => {
       zoomElement.removeEventListener('touchend', handleTouchEnd);
       zoomElement.removeEventListener('touchcancel', handleTouchEnd);
     };
-  }, [divId]);
+  }, [divId, scale, prevDistance]);
 
   return scale;
 };

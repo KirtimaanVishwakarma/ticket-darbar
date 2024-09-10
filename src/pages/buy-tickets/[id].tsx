@@ -11,8 +11,8 @@ const BookSeats = () => {
     <section className='h-full bg-white w-full overflow-hidden px-4'>
       <div className='sm:mx-10 py-10 h-full overflow-auto '>
         <div
-          className={`w-fit sm:m-auto !touch-auto transform ease-in-out duration-700`}
-          style={{ transform: `scale(${scale})` }}
+          className={`w-fit sm:m-auto transform ease-in-out duration-700`}
+          style={{scale: `${scale}`}}
           id='seat-arrangement'
         >
           {screenSeats?.seatDetails?.map((details: any) => (
