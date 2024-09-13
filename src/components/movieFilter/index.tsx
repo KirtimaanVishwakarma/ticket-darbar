@@ -53,7 +53,11 @@ const Filter = ({ className }: FilterOptions) => {
               {ele?.list?.map((ele) => (
                 <header
                   key={ele?.type}
-                  className='px-2 py-1 border border-gray-300 text-black text-xs'
+                  className={`px-2 py-1  ${
+                    ele?.isAdded
+                      ? 'bg-yellow-y1 text-white'
+                      : 'border border-gray-300 text-black'
+                  } text-xs`}
                 >
                   {ele?.type}
                 </header>

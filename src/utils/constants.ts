@@ -416,11 +416,11 @@ export const moviesList = [
 ];
 
 export const languageList = [
-    { type: 'Hindi', isAdded: false },
+    { type: 'Hindi', isAdded: true },
     { type: 'English', isAdded: false },
     { type: 'Gujarati', isAdded: false },
     { type: 'Marathi', isAdded: false },
-    { type: 'Telugu', isAdded: false },
+    { type: 'Telugu', isAdded: true },
     { type: 'Tamil', isAdded: false },
 ]
 
