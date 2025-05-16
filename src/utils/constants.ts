@@ -7,6 +7,10 @@ import MovieIcon from "../../public/assets/dual-color/movie.svg";
 import ProfileIcon from "../../public/assets/dual-color/profile.svg";
 import ProfileFillIcon from "../../public/assets/dual-color/profile-fill.svg";
 import HomeIconFill from "../../public/assets/dual-color/home-fill-yellow.svg"
+import MorningIcon from "../../public/assets/prefferered-time/morning.png"
+import AfternoonIcon from "../../public/assets/prefferered-time/afternoon.png"
+import EveningIcon from "../../public/assets/prefferered-time/evening.png"
+import NightIcon from "../../public/assets/prefferered-time/night.png"
 
 export const cinemasList = [
     {
@@ -342,7 +346,7 @@ export const castList = [
 export const moviesList = [
     {
         image:
-            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC8xMCAgMjcuNksgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386426-sfewqbqlqj-portrait.jpg',
+            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTM4LjRLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419530-vwglsjmfwx-portrait.jpg',
         name: 'Stree 2: Sarkate Ka Atank',
         languages: ' Hindi, Tamil, Telugu',
         certificate: 'UA',
@@ -351,7 +355,7 @@ export const moviesList = [
 
     {
         image:
-            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC8xMCAgMjcuNksgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386426-sfewqbqlqj-portrait.jpg',
+            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTM4LjRLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419530-vwglsjmfwx-portrait.jpg',
         name: 'Stree 2: Sarkate Ka Atank',
         languages: ' Hindi, Tamil, Telugu',
         certificate: 'UA',
@@ -359,7 +363,7 @@ export const moviesList = [
     },
     {
         image:
-            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC8xMCAgMjcuNksgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386426-sfewqbqlqj-portrait.jpg',
+            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTM4LjRLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419530-vwglsjmfwx-portrait.jpg',
         name: 'Stree 2: Sarkate Ka Atank',
         languages: ' Hindi, Tamil, Telugu',
         certificate: 'UA',
@@ -367,7 +371,7 @@ export const moviesList = [
     },
     {
         image:
-            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC8xMCAgMjcuNksgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386426-sfewqbqlqj-portrait.jpg',
+            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTM4LjRLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419530-vwglsjmfwx-portrait.jpg',
         name: 'Stree 2: Sarkate Ka Atank',
         languages: ' Hindi, Tamil, Telugu',
         certificate: 'UA',
@@ -375,7 +379,7 @@ export const moviesList = [
     },
     {
         image:
-            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC8xMCAgMjcuNksgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386426-sfewqbqlqj-portrait.jpg',
+            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTM4LjRLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419530-vwglsjmfwx-portrait.jpg',
         name: 'Stree 2: Sarkate Ka Atank',
         languages: ' Hindi, Tamil, Telugu',
         certificate: 'UA',
@@ -383,7 +387,7 @@ export const moviesList = [
     },
     {
         image:
-            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC8xMCAgMjcuNksgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386426-sfewqbqlqj-portrait.jpg',
+            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTM4LjRLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419530-vwglsjmfwx-portrait.jpg',
         name: 'Stree 2: Sarkate Ka Atank',
         languages: ' Hindi, Tamil, Telugu',
         certificate: 'UA',
@@ -391,7 +395,7 @@ export const moviesList = [
     },
     {
         image:
-            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC8xMCAgMjcuNksgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386426-sfewqbqlqj-portrait.jpg',
+            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTM4LjRLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419530-vwglsjmfwx-portrait.jpg',
         name: 'Stree 2: Sarkate Ka Atank',
         languages: ' Hindi, Tamil, Telugu',
         certificate: 'UA',
@@ -399,7 +403,7 @@ export const moviesList = [
     },
     {
         image:
-            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC8xMCAgMjcuNksgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386426-sfewqbqlqj-portrait.jpg',
+            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTM4LjRLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419530-vwglsjmfwx-portrait.jpg',
         name: 'Stree 2: Sarkate Ka Atank',
         languages: ' Hindi, Tamil, Telugu',
         certificate: 'UA',
@@ -407,7 +411,7 @@ export const moviesList = [
     },
     {
         image:
-            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC8xMCAgMjcuNksgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386426-sfewqbqlqj-portrait.jpg',
+            'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTM4LjRLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419530-vwglsjmfwx-portrait.jpg',
         name: 'Stree 2: Sarkate Ka Atank',
         languages: ' Hindi, Tamil, Telugu',
         certificate: 'UA',
@@ -482,4 +486,81 @@ export const footerLinks = [
     { icon: HomeIcon, filledIcon: HomeIconFill, header: 'Home', path: '/' },
     { icon: MovieIcon, filledIcon: MovieIconFill, header: 'Movies', path: '/movies' },
     { icon: ProfileIcon, filledIcon: ProfileFillIcon, header: 'Profile', path: '/profile' },
+]
+
+export const AvailableFacility = [
+    {
+        img: 'https://in.bmscdn.com/moviemode/cinemafacilities/cancellation.png',
+        header: 'Ticket Cancellation'
+    },
+    {
+        img: 'https://in.bmscdn.com/moviemode/cinemafacilities/cancellation.png',
+        header: 'F&B'
+    },
+    {
+        img: 'https://in.bmscdn.com/moviemode/cinemafacilities/cancellation.png',
+        header: 'MTicket'
+    },
+    {
+        img: 'https://in.bmscdn.com/moviemode/cinemafacilities/cancellation.png',
+        header: 'Gaming Zone'
+    },
+    {
+        img: 'https://in.bmscdn.com/moviemode/cinemafacilities/cancellation.png',
+        header: 'Wheel Chair Facility'
+    },
+    {
+        img: 'https://in.bmscdn.com/moviemode/cinemafacilities/cancellation.png',
+        header: 'Recline Seat'
+    },
+    {
+        img: 'https://in.bmscdn.com/moviemode/cinemafacilities/cancellation.png',
+        header: 'Parking Facility'
+    },
+    {
+        img: 'https://in.bmscdn.com/moviemode/cinemafacilities/cancellation.png',
+        header: 'Drinking Water'
+    },
+    {
+        img: 'https://in.bmscdn.com/moviemode/cinemafacilities/cancellation.png',
+        header: 'Food Court'
+    },
+]
+
+export const PriceFilter = [
+    { min: 0, max: 200 },
+    { min: 201, max: 300 },
+    { min: 301, max: 400 },
+    { min: 401, max: 500 },
+    { min: 501, max: 600 },
+    { min: 601, max: 700 },
+    { min: 701, max: 800 },
+    { min: 800, max: 1000 },
+]
+
+export const PreferredTime = [
+    {
+        img: MorningIcon, dayCycle: 'morning', timeRange: {
+            start: '12:00 AM',
+            end: '11:59 AM',
+        }
+    },
+    {
+        img: AfternoonIcon, dayCycle: 'afternoon', timeRange: {
+            start: '12:00 PM',
+            end: '3:59 PM',
+        }
+    },
+    {
+        img: EveningIcon, dayCycle: 'evening', timeRange: {
+            start: '4:00 PM',
+            end: '6:59 PM',
+        }
+    },
+    {
+        img: NightIcon, dayCycle: 'night', timeRange: {
+            start: '7:00 PM',
+            end: '11:59 PM',
+        }
+    },
 ]

@@ -26,7 +26,6 @@ MultiMedia.getLayout = function getLayout(page: any) {
       <MobileHeader href={`/movies/12`}>
         <header className='text-base font-semibold'>Trailers</header>
       </MobileHeader>
-
       {React.cloneElement(page, { setId })}
     </Layout>
   );
